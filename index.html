@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <title>The NanoGong Applet</title>
+        <script type="text/javascript" src="nanogong.js"></script>
+    </head>
+    <body>
+        <h1>The NanoGong Applet</h1>
+        <applet id="nanogong" archive="nanogong.jar" code="gong.NanoGong"
+        width="140" height="40">
+            <param name="ShowSaveButton" value="false" />
+            <param name="ShowSpeedButton" value="true" />
+            <param name="ShowTime" value="true" />
+            <!-- Sampling rate 8000, 11025, 16000, 22050, 32000 and 44100. -->
+            <param name="SamplingRate" value="32000" />
+            <!-- Codecs ImaADPCM, Speex -->
+            <param name="AudioFormat" value="ImaADPCM" />
+            <!-- Maximum recording (in secs) for nanogong 20 min -->
+            <param name="MaxDuration" value="60" />
+        </applet>
+        <form name="audiorecorder">
+            <input type="button" onclick="sendFile('nanogong')" value="Send" />
+        </form>
+    </body>
+</html>
