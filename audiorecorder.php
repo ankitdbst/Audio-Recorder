@@ -3,7 +3,7 @@
 class audiorecorder {
 
         /**
-         * This method saves the files to a dir named 'voice' within
+         * This method saves the files to a dir named 'wavfiles' within
          * the same plugin dir.
          *
          * Calls exit();
@@ -41,12 +41,11 @@ class audiorecorder {
          *
          * @return string of the generated filenaame
          */
-        private function generate_filename() {
-            // Generate a filename using the time value
+        private function generate_filename($dir) {
             $i = 0;
             do {
                 if ($i > 0) sleep(1);
-                $filename = 'voice/' . time() . '.wav';
+                $filename = $dir . '/' . time() . '.wav';
                 $i++;
             } while ($i < 3 && file_exists($filename)); // try 3 times for unique filename
 
